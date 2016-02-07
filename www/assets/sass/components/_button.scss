@@ -101,7 +101,7 @@
 			&.special {
 				background-color: _palette($p, highlight);
 				box-shadow: none;
-				color: #fff !important;
+				color: #800080 !important;
 
 				&:hover {
 					background-color: lighten(_palette($p, highlight), 5);

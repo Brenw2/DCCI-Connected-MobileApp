@@ -3889,7 +3889,7 @@
 		}
 
 		#banner a {
-			color: #51BAA4;
+			color: #90672e;
 		}
 
 		#banner strong, #banner b {
@@ -3941,7 +3941,7 @@
 
 			#banner input[type="submit"]:active,
 			#banner input[type="reset"]:active,
-			#banner input[type="button"]:active,
+			#banner input[type="button"]:active,s
 			#banner button:active,
 			#banner .button:active {
 				background-color: #f2f2f2;
@@ -3952,7 +3952,7 @@
 			#banner input[type="button"].special,
 			#banner button.special,
 			#banner .button.special {
-				background-color: #51BAA4;
+				background-color: #800080;
 				box-shadow: none;
 				color: #fff !important;
 			}
@@ -3962,7 +3962,7 @@
 				#banner input[type="button"].special:hover,
 				#banner button.special:hover,
 				#banner .button.special:hover {
-					background-color: #63c1ae;
+					background-color: #800080;
 				}
 
 				#banner input[type="submit"].special:active,
@@ -3970,7 +3970,7 @@
 				#banner input[type="button"].special:active,
 				#banner button.special:active,
 				#banner .button.special:active {
-					background-color: #45ad97;
+					background-color: #90672e;
 				}
 
 			#banner input[type="submit"].alt,
