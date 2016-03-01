@@ -427,7 +427,7 @@ add-content navigation style
   -ms-transform: translateY(-50%) scale(0);
   -o-transform: translateY(-50%) scale(0);
   transform: translateY(-50%) scale(0);
-  background-image: url(../img/cd-sprite-2.svg);
+  background-image: url(../../../img/cd-sprite-2.svg);
 }
 .cd-stretchy-nav.add-content ul li:first-of-type a::after {
   background-position: -16px 0px;
@@ -651,7 +651,7 @@ edit content
 }
 .cd-stretchy-nav.edit-content ul a::after {
   right: 7px;
-  background-image: url(../img/cd-sprite-3.svg);
+  background-image: url(../../../img/cd-sprite-3.svg);
 }
 
 .cd-stretchy-nav.edit-content ul li:first-of-type a::after {
