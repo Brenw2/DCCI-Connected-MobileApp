@@ -10,29 +10,33 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/Menuscss/reset.css"> <!-- CSS reset -->
+	    <link rel="stylesheet" href="assets/css/Menuscss/style.css"> <!-- Resource style -->
+	    <script src="assets/js/Menujs/modernizr.js"></script>
 	</head>
    	<!-- Header -->
 		<body class="landing">
 
-		<!-- Header -->
-			<header id="header" class="alt">
-				<h1><a href="index.html">DCCi Connected</a></h1>
-				<a href="#nav">Menu</a>
-			</header>
+			<nav class="cd-stretchy-nav">
+		<a class="cd-nav-trigger" href="#0">
+			Menu
+			<span aria-hidden="true"></span>
+		</a>
 
-		<!-- Nav -->
-			<nav id="nav">
-				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="generic.html">Generic</a></li>
-					<li><a href="elements.html">About US</a></li>
-				</ul>
-			</nav>
+		<ul>
+			<li><a href="index.html"><span>Home</span></a></li>
+			<li><a href="prayerWall.html" class="active"><span>Prayer Wall</span></a></li>
+			<li><a href="aboutUs.html"><span>About Us</span></a></li>
+			<li><a href="#0"><span>Store</span></a></li>
+			<li><a href="#0"><span>Contact</span></a></li>
+		</ul>
+
+		<span aria-hidden="true" class="stretchy-nav-bg"></span>
+	</nav>
             <section id="four" class="wrapper style2 special">
 				<div class="inner">
 					<header class="major narrow">
 						<h2>Prayer Wall</h2>
-						<p>Please enter a prayer below</p>
 					</header>
 					<form action="#" method="POST">
 						<div class="container 75%">
@@ -56,28 +60,8 @@
 				</div>
 			</section>
             
-            <!-- Footer -->
-<!--
-			<footer id="footer">
-				<div class="inner">
-					<ul class="icons">
-						<li><a href="https://www.facebook.com/DCCMUNCIE" class="icon fa-facebook">
-							<span class="label">Facebook</span>
-						</a></li>
-						<li><a href="https://twitter.com/DCCMUNCIE" class="icon fa-twitter">
-							<span class="label">Twitter</span>
-						</a></li>
-					</ul>
-					<ul class="copyright">
-						<li>&copy; Untitled.</li>
-						<li>Images: <a href="http://unsplash.com">Unsplash</a>.</li>
-						<li>Design: <a href="http://templated.co">TEMPLATED</a>.</li>
-					</ul>
-				</div>
-			</footer>
--->
-
 		<!-- Scripts -->
+            <script src="assets/js/Menujs/jquery-2.1.4.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/skel.min.js"></script>
 			<script src="assets/js/util.js"></script>

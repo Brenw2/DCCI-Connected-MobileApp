@@ -178,7 +178,7 @@ Stretchy Nav style - common to:
   -o-transform: translateY(-50%) scale(0);
   transform: translateY(-50%) scale(0);
   opacity: .6;
-  background: url(../img/cd-sprite-1.svg) no-repeat 0 0;
+  background: url(../../../images/MenuIconImages/cd-sprite-1.svg) no-repeat 0 0;
 }
 .cd-stretchy-nav ul a::before {
   /* line visible next to the active navigation item */
@@ -427,7 +427,7 @@ add-content navigation style
   -ms-transform: translateY(-50%) scale(0);
   -o-transform: translateY(-50%) scale(0);
   transform: translateY(-50%) scale(0);
-  background-image: url(../../../img/cd-sprite-2.svg);
+  background-image: url(../../../images/MenuIconImages/cd-sprite-2.svg);
 }
 .cd-stretchy-nav.add-content ul li:first-of-type a::after {
   background-position: -16px 0px;
@@ -604,7 +604,7 @@ edit content
   -ms-transform: translateX(-50%) translateY(-50%);
   -o-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
-  background: url(../img/cd-sprite-3.svg) no-repeat 0 0;
+  background: url(../../../images/MenuIconImages/cd-sprite-3.svg) no-repeat 0 0;
 }
 .cd-stretchy-nav.edit-content .cd-nav-trigger span, .cd-stretchy-nav.edit-content .cd-nav-trigger::after {
   -webkit-transition: opacity 0.2s;
@@ -651,7 +651,7 @@ edit content
 }
 .cd-stretchy-nav.edit-content ul a::after {
   right: 7px;
-  background-image: url(../../../img/cd-sprite-3.svg);
+  background-image: url(../../../images/MenuIconImages/cd-sprite-3.svg);
 }
 
 .cd-stretchy-nav.edit-content ul li:first-of-type a::after {
