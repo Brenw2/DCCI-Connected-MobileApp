@@ -10,7 +10,7 @@
     document.addEventListener("deviceready", onDeviceReady, false);
         
     function onDeviceReady() {
-         var ref = window.open('https://www.twitter.com/DCCMUNCIE', '_blank', 'location=yes');
+         var ref = window.open('https://twitter.com/DCCMUNCIE', '_blank', 'location=yes');
          ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
          ref.addEventListener('exit', function(event) { window.location.replace("index.html") });
     }
