@@ -5,6 +5,8 @@ Primary style
 -------------------------------- */
 *, *::after, *::before {
   box-sizing: border-box;
+    
+    
 }
 
 html {
@@ -40,6 +42,8 @@ Stretchy Nav style - common to:
   z-index: 2;
   top: 40px;
   right: 5%;
+    
+    
 }
 .cd-stretchy-nav .stretchy-nav-bg {
   /* this is the stretching navigation background */
@@ -55,6 +59,8 @@ Stretchy Nav style - common to:
   -webkit-transition: height 0.2s, box-shadow 0.2s;
   -moz-transition: height 0.2s, box-shadow 0.2s;
   transition: height 0.2s, box-shadow 0.2s;
+    
+    
 }
 .cd-stretchy-nav.nav-is-visible .stretchy-nav-bg {
   height: 100%;
@@ -809,3 +815,14 @@ keyframes
     transform: translateX(0);
   }
 }
+#darkness {
+    background:rgba(0, 0, 0, 0.5);
+    display:none;
+    height:100%;
+    left:0;
+    position:absolute;
+    top:0;
+    width:100%;
+    z-index:5;
+}
+

@@ -17,3 +17,11 @@ jQuery(document).ready(function(){
 		});
 	}
 });
+
+$('ul').hover(function(){
+    $('#darkness').fadeTo(200, 1);
+}, function(){
+    $('#darkness').fadeTo(200, 0, function(){
+        $(this).hide();
+    });
+});
