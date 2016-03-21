@@ -9,14 +9,14 @@ function setupRequest() {
 	request.onreadystatechange = function() {
 		if (request.readyState == 4 && request.status == 200) {
 			var json = JSON.parse(request.responseText);
-			populateWallFromServer(json);
+			populateWallFromJSON(json);
 		}
 	};
 	request.open("GET", url, true);
 	request.send();
 }
 
-function populateWallFromServer(json) {
+function populateWallFromJSON(json) {
 	var wall = document.getElementById('wall');
 	var prayerlist = json.prayerlist;
 	wall.innerHTML = "";
