@@ -4146,3 +4146,17 @@ s #banner button:active,
         padding: 2em 0 0.1em 0;
     }
 }
+
+.darkness {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.forgroundDarkness {
+    filter: brightness(25%);
+    -webkit-filter: brightness(25%) blur(2px);
+}
+
+.antifilter {
+    filter: none;
+    -webkit-filter: none;
+}
