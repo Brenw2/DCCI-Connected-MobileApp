@@ -67,16 +67,15 @@ function setupPostRequest() {
 		"PrayerRequestMessage" : message
 	});
 	console.log(params);
-	request.open("POST", url, true);
+	request.open("POST", url);
 	request.setRequestHeader("Host", host);
 	request.setRequestHeader("Content-type", "application/json");
 	request.setRequestHeader("Content-length", params.length);
-	//Host: prayerwall-test.azurewebsites.net
-	//Content-type: application/json
-	//Content-Length: 117
-	// request.setRequestHeader("Connection", "close");
 	request.onreadystatechange = function() {
 		console.log(request.readyState + ": " + request.responseText);
+		if (request.readyState == 4) {
+			window.location.href = "prayerWallView.html";
+		}
 	};
 	request.send(params);
 }
