@@ -4,7 +4,7 @@ window.onload = function() {
 
 function setupRequest() {
 	var request = new XMLHttpRequest();
-	var url = "https://demo1567334.mockable.io/getprayerlist";
+	var url = "http://prayerwall-test.azurewebsites.net/api/PrayerRequest/";
 
 	request.onreadystatechange = function() {
 		if (request.readyState == 4 && request.status == 200) {
@@ -18,7 +18,7 @@ function setupRequest() {
 
 function populateWallFromJSON(json) {
 	var wall = document.getElementById('wall');
-	var prayerlist = json.prayerlist;
+	var prayerlist = json.value;
 	wall.innerHTML = "";
 	var html = "";
 	for (var i = 0; i < prayerlist.length; i++) {
@@ -43,8 +43,8 @@ const PRAYER_TEMPLATE = //
 
 function getHtml(prayer) {
 	return PRAYER_TEMPLATE//
-	.replace(PRECANT, prayer.precant)//
-	.replace(TIMEAGO, prayer.timestamp.timeago)//
-	.replace(PRAYER, prayer.prayer);
+	.replace(PRECANT, prayer.PrayerRequesterName)//
+	.replace(TIMEAGO, prayer.TimeStamp)//
+	.replace(PRAYER, prayer.PrayerRequestMessage);
 }
 
