@@ -31,6 +31,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
         <!-- Resource style -->
         <script src="assets/js/Menujs/modernizr.js"></script>
         <!-- Modernizr -->
+        <script src="assets/js/prayerwall.js"></script>
     </head>
 
     <body class="landing">
@@ -43,19 +44,20 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
                     <div class="container 75%">
                         <div class="row uniform 50%">
                             <div class="6u 12u$(xsmall)">
-                                <input name="name" placeholder="Name (Optional)" type="text" />
+                                <input id="nameInput" name="name" placeholder="Name (Optional)" type="text" />
                             </div>
                             <!-- <div class="6u$ 12u$(xsmall)">
                                 <input name="email" placeholder="Email (Optional)" type="email" />
                             </div> -->
                             <div class="12u$">
-                                <textarea name="message" placeholder="Message" rows="4" style="resize: none;"></textarea>
+                                <textarea id="messageTextArea" name="message" placeholder="Message" rows="4" style="resize: none;">
+                                </textarea>
                             </div>
                         </div>
                     </div>
                     <ul class="actions">
                         <li>
-                            <input type="submit" class="special" value="Submit" />
+                            <input type="submit" class="special" value="Submit" onclick="setupPostRequest()"/>
                         </li>
                         <li>
                             <input type="reset" class="alt" value="Reset" />
