@@ -11,11 +11,15 @@ jQuery(document).ready(function () {
                 event.preventDefault();
                 stretchyNav.toggleClass('nav-is-visible');
                 page.toggleClass('forgroundDarkness');
+                stretchyNavs.toggleClass('stectchyNavSizeOpen');
+
             });
         });
 
         $(document).on('click', function (event) {
-            (!$(event.target).is('.cd-nav-trigger') && !$(event.target).is('.cd-nav-trigger span')) && stretchyNavs.removeClass('nav-is-visible');
+            (!$(event.target).is('.cd-nav-trigger') && !$(event.target).is('.cd-nav-trigger span')) && stretchyNav.removeClass('nav-is-visible');
+
+            stretchyNavs.toggleClass('strecthyNavSizeClosed');
 
         });
     }
