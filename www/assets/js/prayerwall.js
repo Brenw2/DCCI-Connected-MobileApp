@@ -4,7 +4,7 @@ window.onload = function() {
 
 function setupRequest() {
 	var request = new XMLHttpRequest();
-	var url = "http://demo1567334.mockable.io/updatedprayerlist";
+	var url = "http://prayerwall-test.azurewebsites.net/api/PrayerRequest/";
 
 	request.onreadystatechange = function() {
 		if (request.readyState == 4 && request.status == 200) {
