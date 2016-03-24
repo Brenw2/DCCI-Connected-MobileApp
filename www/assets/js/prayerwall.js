@@ -9,6 +9,7 @@ function getPage() {
 	return path.substring(path.lastIndexOf('/') + 1);
 }
 
+var host = "prayerwall-test.azurewebsites.net";
 var url = "http://prayerwall-test.azurewebsites.net/api/PrayerRequest/";
 
 function setupGetRequest() {
@@ -56,7 +57,7 @@ function getHtml(prayer) {
 }
 
 function setupPostRequest() {
-	var http = new XMLHttpRequest();
+	var request = new XMLHttpRequest();
 	var name = document.getElementById('nameInput').value;
 	var timestamp = (new Date()).toISOString();
 	var message = document.getElementById('messageTextArea').value;
@@ -66,14 +67,18 @@ function setupPostRequest() {
 		"PrayerRequestMessage" : message
 	});
 	console.log(params);
-	http.open("POST", url, true);
-	http.setRequestHeader("Content-type", "application/json");
-	http.setRequestHeader("Content-length", params.length);
-	// http.setRequestHeader("Connection", "close");
-	http.onreadystatechange = function() {
-		console.log(http.readyState + ": " + http.responseText);
+	request.open("POST", url, true);
+	request.setRequestHeader("Host", host);
+	request.setRequestHeader("Content-type", "application/json");
+	request.setRequestHeader("Content-length", params.length);
+	//Host: prayerwall-test.azurewebsites.net
+	//Content-type: application/json
+	//Content-Length: 117
+	// request.setRequestHeader("Connection", "close");
+	request.onreadystatechange = function() {
+		console.log(request.readyState + ": " + request.responseText);
 	};
-	http.send(params);
+	request.send(params);
 }
 
 /*
