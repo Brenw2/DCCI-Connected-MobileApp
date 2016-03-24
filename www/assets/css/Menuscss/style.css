@@ -217,7 +217,7 @@ Stretchy Nav style - common to:
     -ms-transform: translateX(3px) translateY(-50%) scaleY(0);
     -o-transform: translateX(3px) translateY(-50%) scaleY(0);
     transform: translateX(3px) translateY(-50%) scaleY(0);
-    background-color: #0a9581;
+    background-color: #90672e;
 }
 
 .cd-stretchy-nav ul li:first-of-type a::after {
