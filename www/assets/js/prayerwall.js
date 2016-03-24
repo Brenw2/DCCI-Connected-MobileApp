@@ -5,7 +5,6 @@ window.onload = function() {
 function setupRequest() {
 	var request = new XMLHttpRequest();
 	var url = "http://prayerwall-test.azurewebsites.net/api/PrayerRequest/";
-
 	request.onreadystatechange = function() {
 		if (request.readyState == 4 && request.status == 200) {
 			var json = JSON.parse(request.responseText);
