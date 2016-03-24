@@ -4039,6 +4039,7 @@ s #banner button:active,
     background-color: #1E2832;
     color: rgba(255, 255, 255, 0.75);
     text-align: center;
+    align-self: baseline;
 }
 
 #footer input,
