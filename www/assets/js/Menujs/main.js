@@ -1,7 +1,7 @@
 jQuery(document).ready(function () {
     if ($('.cd-stretchy-nav').length > 0) {
         var stretchyNavs = $('.cd-stretchy-nav');
-        var page = $('.appPage')
+        var page = $('.appPage');
 
         stretchyNavs.each(function () {
             var stretchyNav = $(this)
