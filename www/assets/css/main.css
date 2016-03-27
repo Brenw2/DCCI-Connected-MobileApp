@@ -3490,3 +3490,25 @@ body.landing {
 	filter: none;
 	-webkit-filter: none;
 }
+
+header.floatingHeader {
+	background: #1E2832;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	vertical-align: middle;
+	padding-top: 50px;
+	padding-bottom: 32px;
+	padding-right: 40px;
+}
+
+header.floatingHeader h2 {
+	font-size: 1.5em;
+}
+
+#toplineSpacer {
+	display: block;
+	height: 82px;
+}
