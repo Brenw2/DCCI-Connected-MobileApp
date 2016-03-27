@@ -3439,7 +3439,7 @@ body.landing {
 
 #footer .copyright {
 	color: #a5a9ad;
-	font-size: 0.9em;
+	font-size: 0.5em;
 	margin: 0 0 2em 0;
 	padding: 0;
 	text-transform: uppercase;
@@ -3491,12 +3491,15 @@ body.landing {
 	-webkit-filter: none;
 }
 
-header.floatingHeader {
-	background: #1E2832;
+header.floating, footer.floating {
 	position: fixed;
-	top: 0;
 	left: 0;
 	right: 0;
+}
+
+header.floating {
+	background: #1E2832;
+	top: 0;
 	text-align: center;
 	vertical-align: middle;
 	padding-top: 50px;
@@ -3504,11 +3507,20 @@ header.floatingHeader {
 	padding-right: 40px;
 }
 
-header.floatingHeader h2 {
+header.floating h2 {
 	font-size: 1.5em;
 }
 
+footer.floating {
+	bottom: 0;
+	padding-top: 8px;
+}
+
 #toplineSpacer {
-	display: block;
 	height: 82px;
+}
+
+#bottomlineSpacer {
+	clear: both;
+	height: 128px;
 }
