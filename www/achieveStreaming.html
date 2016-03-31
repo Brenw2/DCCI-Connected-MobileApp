@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Twitter Link</title>
+    <title>Mobile Streaming Link</title>
 
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -10,7 +10,7 @@
     document.addEventListener("deviceready", onDeviceReady, false);
         
     function onDeviceReady() {
-         var ref = window.open('http://www.destinylive.us/messagearchive.aspx', '_blank', 'location=yes');
+         var ref = window.open('http://destinylive.us/messagearchive.aspx', '_blank', 'location=yes');
          ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
          ref.addEventListener('exit', function(event) { window.location.replace("index.html") });
     }
