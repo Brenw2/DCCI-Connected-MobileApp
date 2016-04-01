@@ -14,13 +14,22 @@ module.exports = [
             "cordova.InAppBrowser.open",
             "window.open"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-device/www/device.js",
+        "id": "cordova-plugin-device.device",
+        "pluginId": "cordova-plugin-device",
+        "clobbers": [
+            "device"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
     "cordova-plugin-whitelist": "1.2.1",
-    "cordova-plugin-inappbrowser": "1.2.2-dev"
+    "cordova-plugin-inappbrowser": "1.2.2-dev",
+    "cordova-plugin-device": "1.1.2-dev"
 }
 // BOTTOM OF METADATA
 });
