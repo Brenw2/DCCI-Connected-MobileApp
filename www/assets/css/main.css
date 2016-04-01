@@ -1237,6 +1237,7 @@ width: device-width;
 
 body {
 	-ms-overflow-style: scrollbar;
+	background-color: transparent;
 }
 
 @media screen and (max-width: 480px) {
@@ -1245,8 +1246,44 @@ body {
 	}
 }
 
-.appPageContainer, body {
-	background: #1E2832;
+.customBackgroundColor {
+	z-index: -2;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #1E2832;
+}
+
+#customBackground {
+	z-index: -1;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: #1E2832;
+	background-attachment: scroll;
+	background-position: center;
+	background-image: url("images/overlay.png"), url("../../images/main_menu_background.jpg");
+	background-size: cover;
+}
+
+#customBackground.customBlur {
+	filter: brightness(80%) blur(6px);
+	-webkit-filter: brightness(80%) blur(6px);
+	/*z-index: -1;
+	 position: fixed;
+	 left: 0;
+	 right: 0;
+	 top: 0;
+	 bottom: 0;
+	 background-color: #1E2832;
+	 background-attachment: scroll;
+	 background-position: center;
+	 background-image: url("images/overlay.png"), url("../../images/main_menu_background.jpg");
+	 background-size: cover;*/
 }
 
 body.is-loading *, body.is-loading *:before, body.is-loading *:after {
@@ -1259,6 +1296,7 @@ body.is-loading *, body.is-loading *:before, body.is-loading *:after {
 	-ms-transition: none !important;
 	transition: none !important;
 }
+
 
 /* Type */
 
@@ -3202,6 +3240,11 @@ body.landing {
 	text-align: center;
 }
 
+#banner.alt {
+	background-image: none;
+	background-color: transparent;
+}
+
 #banner input, #banner select, #banner textarea {
 	color: #fff;
 }
@@ -3482,7 +3525,7 @@ body.landing {
 }
 
 .forgroundDarkness {
-	filter: brightness(80%);
+	filter: brightness(80%) blur(6px);
 	-webkit-filter: brightness(80%) blur(6px);
 }
 
@@ -3524,3 +3567,4 @@ footer.floating {
 	clear: both;
 	height: 128px;
 }
+
