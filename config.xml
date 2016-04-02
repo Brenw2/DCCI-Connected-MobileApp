@@ -74,7 +74,9 @@
         <plugin name="cordova-plugin-whitelist" version="1" />
         <access origin="https://www.facebook.com"/>
         <access origin="https://www.givelify.com/givenow/?token=eyJvcmdfaWQiOiJORFF6TkF-fiIsImJhZGdlX2ltYWdlIjoiYjMucG5nIn0~"/>
-        <access origin="https://www.facebook.com"/>
+        <access origin="https://www.twitter.com"/>
+        <access origin="http://www.dccmuncie.org"/>
+        <access origin="http://destinylive.us"/>
         <allow-navigation href="http://*/*" />
         <allow-intent href="http://*/*" />
         <allow-intent href="https://*/*" />
