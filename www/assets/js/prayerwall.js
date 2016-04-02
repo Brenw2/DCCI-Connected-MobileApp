@@ -1,3 +1,27 @@
+const GUID = "@guid";
+const PRECANT = "@precant";
+const TIMEAGO = "@timeago";
+const PRAYER = "@prayer";
+const PRAYER_TEMPLATE = //
+"<a href='prayerView.html?guid=" + GUID + "'>" + //
+"   <div class='prayer'>" + //
+"	    <span style='font-weight: bold;'>" + PRECANT + "</span>" + //
+"	    &nbsp;-&nbsp;" + //
+"		<span style='font-style: italic;'>" + TIMEAGO + "</span>" + //
+"		<br/>" + //
+"		<div style='background: rgba(144, 144, 144, 0.075); padding: 3px;'>" + //
+"			" + PRAYER + //
+"		</div>" + //
+"   </div>" + //
+"</a";
+
+const HTTP = "https://";
+const HOST = "dccmuncieprayerwallapi.azurewebsites.net";
+const HTTP_HOST = HTTP + HOST;
+const PRAYER_REQUEST = HTTP_HOST + "/api/PrayerRequest/";
+const PRAYER_COMMENT_REQUEST = HTTP_HOST + "/api/PrayerRequestComment";
+const PRAYER_COMMENT_REQUEST_GUID = PRAYER_COMMENT_REQUEST + "(guid'" + GUID + "')";
+
 window.onload = function() {
 	var page = getPage();
 	if (page == "prayerWallView.html") {
@@ -12,10 +36,13 @@ function getPage() {
 	return path.substring(path.lastIndexOf('/') + 1);
 }
 
-const HTTP = "https://";
-const HOST = "dccmuncieprayerwallapi.azurewebsites.net";
-const PRAYER_REQUEST = HTTP + HOST + "/api/PrayerRequest/";
-const PRAYER_COMMENT_REQUEST = HTTP + HOST + "/api/PrayerRequestComment/";
+function getPrayerCommentRequestUrl(guid) {
+	if (!guid) {
+		return PRAYER_COMMENT_REQUEST + "/";
+	} else {
+		return PRAYER_COMMENT_REQUEST_GUID.replace(GUID, guid);
+	}
+}
 
 function runPrayerWallRequest() {
 	var request = new XMLHttpRequest();
@@ -39,23 +66,6 @@ function populateWallFromJSON(json) {
 	}
 	wall.innerHTML = html;
 }
-
-const GUID = "@guid";
-const PRECANT = "@precant";
-const TIMEAGO = "@timeago";
-const PRAYER = "@prayer";
-const PRAYER_TEMPLATE = //
-"<a href='prayerView.html?guid=" + GUID + "'>" + //
-"   <div class='prayer'>" + //
-"	    <span style='font-weight: bold;'>" + PRECANT + "</span>" + //
-"	    &nbsp;-&nbsp;" + //
-"		<span style='font-style: italic;'>" + TIMEAGO + "</span>" + //
-"		<br/>" + //
-"		<div style='background: rgba(144, 144, 144, 0.075); padding: 3px;'>" + //
-"			" + PRAYER + //
-"		</div>" + //
-"   </div>" + //
-"</a";
 
 function getHtml(prayer) {
 	return PRAYER_TEMPLATE//
@@ -98,7 +108,7 @@ function runPrayerViewRequest() {
 			wall.innerHtml = "<pre>" + JSON.stringify(json) + "</pre>";
 		}
 	};
-	request.open("GET", PRAYER_COMMENT_REQUEST, true);
+	request.open("GET", getPrayerCommentRequestUrl("79dba717-219a-47fb-80c2-0a1ea20391a9"), true);
 	request.send();
 }
 
