@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mobile Streaming Link</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    
+    document.addEventListener("deviceready", onDeviceReady, false);
+        
+    function onDeviceReady() {
+         var ref = window.open('http://www.dccmuncie.org/im-new/', '_blank', 'location=yes');
+         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+         ref.addEventListener('exit', function(event) { window.location.replace("aboutUs.html") });
+    }
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
