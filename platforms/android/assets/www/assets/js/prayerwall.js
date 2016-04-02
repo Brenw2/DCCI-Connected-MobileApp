@@ -77,7 +77,7 @@ function setupPostRequest() {
 	});
 	console.log(params);
 	request.open("POST", PRAYER_REQUEST);
-	request.setRequestHeader("Host", host);
+	request.setRequestHeader("Host", HOST);
 	request.setRequestHeader("Content-type", "application/json");
 	request.setRequestHeader("Content-length", params.length);
 	request.onreadystatechange = function() {
