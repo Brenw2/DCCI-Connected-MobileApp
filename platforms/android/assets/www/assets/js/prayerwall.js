@@ -1,6 +1,9 @@
 window.onload = function() {
-	if (getPage() == "prayerWallView.html") {
-		setupGetRequest();
+	var page = getPage();
+	if (page == "prayerWallView.html") {
+		runPrayerWallRequest();
+	} else if (page == "prayerView.html") {
+		runPrayerViewRequest();
 	}
 };
 
@@ -9,10 +12,12 @@ function getPage() {
 	return path.substring(path.lastIndexOf('/') + 1);
 }
 
-var host = "prayerwall-test.azurewebsites.net";
-var url = "http://prayerwall-test.azurewebsites.net/api/PrayerRequest/";
+const HTTP = "https://";
+const HOST = "dccmuncieprayerwallapi.azurewebsites.net";
+const PRAYER_REQUEST = HTTP + HOST + "/api/PrayerRequest/";
+const PRAYER_COMMENT_REQUEST = HTTP + HOST + "/api/PrayerRequestComment/";
 
-function setupGetRequest() {
+function runPrayerWallRequest() {
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function() {
 		if (request.readyState == 4 && request.status == 200) {
@@ -20,7 +25,7 @@ function setupGetRequest() {
 			populateWallFromJSON(json);
 		}
 	};
-	request.open("GET", url, true);
+	request.open("GET", PRAYER_REQUEST, true);
 	request.send();
 }
 
@@ -35,22 +40,26 @@ function populateWallFromJSON(json) {
 	wall.innerHTML = html;
 }
 
+const GUID = "@guid";
 const PRECANT = "@precant";
 const TIMEAGO = "@timeago";
 const PRAYER = "@prayer";
 const PRAYER_TEMPLATE = //
-"<div>" + //
-"	<span style='font-weight: bold;'>" + PRECANT + "</span>" + //
-"	&nbsp;-&nbsp;" + //
-"	<span style='font-style: italic;'>" + TIMEAGO + "</span>" + //
-"	<br/>" + //
-"	<div style='background: rgba(144, 144, 144, 0.075); padding: 3px;'>" + //
-"		" + PRAYER + //
-"	</div>" + //
-"</div>";
+"<a href='prayerView.html?guid=" + GUID + "'>" + //
+"   <div class='prayer'>" + //
+"	    <span style='font-weight: bold;'>" + PRECANT + "</span>" + //
+"	    &nbsp;-&nbsp;" + //
+"		<span style='font-style: italic;'>" + TIMEAGO + "</span>" + //
+"		<br/>" + //
+"		<div style='background: rgba(144, 144, 144, 0.075); padding: 3px;'>" + //
+"			" + PRAYER + //
+"		</div>" + //
+"   </div>" + //
+"</a";
 
 function getHtml(prayer) {
 	return PRAYER_TEMPLATE//
+	.replace(GUID, prayer.Id)//
 	.replace(PRECANT, prayer.PrayerRequesterName)//
 	.replace(TIMEAGO, prayer.TimeStamp)//
 	.replace(PRAYER, prayer.PrayerRequestMessage);
@@ -67,7 +76,7 @@ function setupPostRequest() {
 		"PrayerRequestMessage" : message
 	});
 	console.log(params);
-	request.open("POST", url);
+	request.open("POST", PRAYER_REQUEST);
 	request.setRequestHeader("Host", host);
 	request.setRequestHeader("Content-type", "application/json");
 	request.setRequestHeader("Content-length", params.length);
@@ -80,33 +89,31 @@ function setupPostRequest() {
 	request.send(params);
 }
 
-/*
- POST http://localhost:55558/api/PrayerRequest/ HTTP/1.1
- User-Agent: Fiddler
- Host: localhost:55558
- Content-type: application/json
- Content-Length: 117
+function runPrayerViewRequest() {
+	var request = new XMLHttpRequest();
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			var json = JSON.parse(request.responseText);
+			var wall = document.getElementById('wall');
+			wall.innerHtml = "<pre>" + JSON.stringify(json) + "</pre>";
+		}
+	};
+	request.open("GET", PRAYER_COMMENT_REQUEST, true);
+	request.send();
+}
 
- {
- "PrayerRequesterName":"Tristan",
- "TimeStamp":"2009-04-12T20:44:55",
- "PrayerRequestMessage":"Ryan is the best"
- }
- HTTP/1.1 201 Created
- Cache-Control: no-cache
- Pragma: no-cache
- Content-Type: application/json; charset=utf-8
- Expires: -1
- Location: http://localhost:55558/api/PrayerRequest(guid'd96e2c98-f348-427c-9417-b5c5dcd1a205')
- Server: Microsoft-IIS/10.0
- DataServiceVersion: 3.0
- X-AspNet-Version: 4.0.30319
- X-SourceFiles: =?UTF-8?B?QzpcVXNlcnNcdHJpc3RfMDAwXE9uZURyaXZlXFNvZnR3YXJlRGV2ZWxvcG1lbnRcVmlzdWFsU3R1ZGlvMjAxNVxQcm9qZWN0c1xQcmF5ZXJXYWxsXFByYXllcldhbGwuV2ViQXBpXGFwaVxQcmF5ZXJSZXF1ZXN0XA==?=
- X-Powered-By: ASP.NET
- Date: Wed, 09 Mar 2016 03:48:11 GMT
- Content-Length: 238
-
- {
- "odata.metadata":"http://localhost:55558/api/$metadata#PrayerRequest/@Element","Id":"d96e2c98-f348-427c-9417-b5c5dcd1a205","PrayerRequesterName":"Tristan","TimeStamp":"2009-04-12T20:44:55","PrayerRequestMessage":"Ryan is the best"
- }
- */
+function getParameterByName(name, url) {
+	if (!url) {
+		url = window.location.href;
+	}
+	name = name.replace(/[\[\]]/g, "\\$&");
+	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
+	    results = regex.exec(url);
+	if (!results) {
+		return null;
+	}
+	if (!results[2]) {
+		return '';
+	}
+	return decodeURIComponent(results[2].replace(/\+/g, " "));
+}

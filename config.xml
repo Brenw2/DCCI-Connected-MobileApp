@@ -82,7 +82,7 @@
         <access origin="https://twitter.com/DCCMUNCIE"/>
         <access origin="http://www.dccmuncie.org"/>
         <access origin="http://destinylive.us/livbroadcast_mobile.aspx"/>
-        <access origin="https://dccmuncieprayerwallapi.azurewebsites.net/">
+        <access origin="https://dccmuncieprayerwallapi.azurewebsites.net/"></access>
         <allow-navigation href="http://*/*" />
         <allow-intent href="http://*/*" />
         <allow-intent href="https://*/*" />
