@@ -1,6 +1,9 @@
 window.onload = function() {
-	if (getPage() == "prayerWallView.html") {
-		setupGetRequest();
+	var page = getPage();
+	if (page == "prayerWallView.html") {
+		runPrayerWallRequest();
+	} else if (page == "prayerView.html") {
+		runPrayerViewRequest();
 	}
 };
 
@@ -9,10 +12,12 @@ function getPage() {
 	return path.substring(path.lastIndexOf('/') + 1);
 }
 
-var host = "dccmuncieprayerwallapi.azurewebsites.net";
-var url = "https://" + host + "/api/PrayerRequest/";
+const HTTP = "https://";
+const HOST = "dccmuncieprayerwallapi.azurewebsites.net";
+const PRAYER_REQUEST = HTTP + HOST + "/api/PrayerRequest/";
+const PRAYER_COMMENT_REQUEST = HTTP + HOST + "/api/PrayerRequestComment/";
 
-function setupGetRequest() {
+function runPrayerWallRequest() {
 	var request = new XMLHttpRequest();
 	request.onreadystatechange = function() {
 		if (request.readyState == 4 && request.status == 200) {
@@ -20,7 +25,7 @@ function setupGetRequest() {
 			populateWallFromJSON(json);
 		}
 	};
-	request.open("GET", url, true);
+	request.open("GET", PRAYER_REQUEST, true);
 	request.send();
 }
 
@@ -71,7 +76,7 @@ function setupPostRequest() {
 		"PrayerRequestMessage" : message
 	});
 	console.log(params);
-	request.open("POST", url);
+	request.open("POST", PRAYER_REQUEST);
 	request.setRequestHeader("Host", host);
 	request.setRequestHeader("Content-type", "application/json");
 	request.setRequestHeader("Content-length", params.length);
@@ -82,6 +87,19 @@ function setupPostRequest() {
 		}
 	};
 	request.send(params);
+}
+
+function runPrayerViewRequest() {
+	var request = new XMLHttpRequest();
+	request.onreadystatechange = function() {
+		if (request.readyState == 4 && request.status == 200) {
+			var json = JSON.parse(request.responseText);
+			var wall = document.getElementById('wall');
+			wall.innerHtml = "<pre>" + JSON.stringify(json) + "</pre>";
+		}
+	};
+	request.open("GET", PRAYER_COMMENT_REQUEST, true);
+	request.send();
 }
 
 function getParameterByName(name, url) {

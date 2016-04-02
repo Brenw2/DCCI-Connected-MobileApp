@@ -7,6 +7,7 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 <html>
 	<head>
 		<title>DCCI - Connected</title>
+		<script src="assets/js/prayerwall.js"></script>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -42,41 +43,25 @@ Released for free under the Creative Commons Attribution 3.0 license (templated.
 			<span aria-hidden="true" class="stretchy-nav-bg"></span>
 		</nav>
 	</div>
-
 	<div class="customBackgroundColor">
 		<!-- Custom Background Color Tag -->
 	</div>
-
 	<div class="appPage">
+		<div class="customBackgroundColor">
+			<!-- Custom Background Color Tag -->
+		</div>
 		<body class="landing">
 			<section id="four" class="wrapper style2 special">
+				<div id="toplineSpacer">
+					<!-- Empty -->
+				</div>
+				<header class="major floating">
+					<h2>Prayer Wall</h2>
+				</header>
 				<div class="inner">
-					<div id="toplineSpacer">
-						<!-- Empty -->
+					<div id="wall" style="text-align: left;">
+						<!-- Generated From Server -->
 					</div>
-					<header class="major floating">
-						<h2>Prayer Wall</h2>
-					</header>
-					<form action="#" method="POST">
-						<div class="container 75%">
-							<div class="row uniform 50%">
-								<div class="12u$">
-									<input id="nameInput" name="name" placeholder="Name (Optional)" type="text" />
-								</div>
-								<div class="12u$">
-									<textarea id="messageTextArea" name="message" placeholder="Message" rows="4" style="resize: none;"></textarea>
-								</div>
-							</div>
-						</div>
-						<ul class="actions">
-							<li>
-								<input type="button" class="special" value="Submit" onclick="setupPostRequest()"/>
-							</li>
-							<li>
-								<input type="reset" class="alt" value="Reset" />
-							</li>
-						</ul>
-					</form>
 				</div>
 			</section>
 			<!-- Scripts -->
