@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FaceBook Link</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        function onDeviceReady() {
+            var ref = window.open('https://www.facebook.com/destinylive/', '_blank', 'location=yes');
+            ref.addEventListener('loaderror', function (event) {
+                alert('error: ' + event.message);
+            });
+            ref.addEventListener('exit', function (event) {
+                window.location.replace("index.html")
+            });
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
