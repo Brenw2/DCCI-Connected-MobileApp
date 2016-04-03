@@ -1,5 +1,7 @@
 window.onload = function() {
 	var guid = getParameterByName("guid");
+	var newCommentButtonArea = document.getElementById('newCommentButtonArea');
+	newCommentButtonArea.innerHTML = "<a href='newComment.html?guid=" + guid + "' class='button big special'>New Comment</a>";
 	DCC.GET.PrayerRequest(handlePrayerJSON, guid);
 	DCC.GET.PrayerRequestComment(handleCommentJSON, guid);
 };
@@ -24,20 +26,4 @@ function handleCommentJSON(json) {
 		html = "<div class='prayer'>NO COMMENTS</div>";
 	}
 	commentContent.innerHTML = html;
-}
-
-function getParameterByName(name, url) {
-	if (!url) {
-		url = window.location.href;
-	}
-	name = name.replace(/[\[\]]/g, "\\$&");
-	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
-	    results = regex.exec(url);
-	if (!results) {
-		return null;
-	}
-	if (!results[2]) {
-		return '';
-	}
-	return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
