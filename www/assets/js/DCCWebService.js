@@ -17,11 +17,13 @@ function genericGet(callback, url) {
 const DCC = {
 
 	"GUID" : "@guid",
+	"ALT_GUID" : "@altguid",
 	"PRECANT" : "@precant",
 	"TIMEAGO" : "@timeago",
 	"PRAYER" : "@prayer",
+	"COMMENT" : "@comment",
 
-	"HTMLFromTemplate" : function(template, prayer) {
+	"PrayerHTMLFromTemplate" : function(template, prayer) {
 		return template//
 		.replace(DCC.GUID, prayer.Id)//
 		.replace(DCC.PRECANT, prayer.PrayerRequesterName)//
@@ -29,32 +31,45 @@ const DCC = {
 		.replace(DCC.PRAYER, prayer.PrayerRequestMessage);
 	},
 
+	"CommentHTMLFromTemplate" : function(template, comment) {
+		return template//
+		.replace(DCC.GUID, comment.Id)//
+		.replace(DCC.PRECANT, comment.Name)//
+		.replace(DCC.ALT_GUID, comment.PrayerRequestId)//
+		.replace(DCC.TIMEAGO, comment.TimeStamp)//
+		.replace(DCC.COMMENT, comment.Comment);
+	},
+
 	"TEMPLATE" : {
 		"Prayer" : function() {
 			return "   <div class='prayer'>" + //
-			"	    <span style='font-weight: bold;'>" + DCC.PRECANT + "</span>" + //
+			"	    <span class='prayerPrecant'>" + DCC.PRECANT + "</span>" + //
 			"	    &nbsp;-&nbsp;" + //
-			"		<span style='font-style: italic;'>" + DCC.TIMEAGO + "</span>" + //
+			"		<span class='prayerTimestamp'>" + DCC.TIMEAGO + "</span>" + //
 			"		<br/>" + //
-			"		<div style='background: rgba(144, 144, 144, 0.075); padding: 3px;'>" + //
+			"		<div class='prayerMessage'>" + //
 			"			" + DCC.PRAYER + //
 			"		</div>" + //
 			"   </div>";
 		},
 
 		"PrayerWall" : function() {
-			return "<a href='prayerView.html?guid" + DCC.GUID + ">" + DCC.TEMPLATE.Prayer() + "</a>";
+			return "<a href='prayerView.html?guid=" + DCC.GUID + "'>" + DCC.TEMPLATE.Prayer() + "</a>";
+		},
+
+		"Comment" : function() {
+			return DCC.TEMPLATE.Prayer().replace(DCC.PRAYER, DCC.COMMENT);
 		}
 	},
 
 	"GET" : {
 
 		"PrayerRequest" : function(callback, guid) {
-			genericGet(callback, getUrl(PRAYER_REQUEST));
+			genericGet(callback, getUrl(PRAYER_REQUEST, guid));
 		},
 
 		"PrayerRequestComment" : function(callback, guid) {
-			genericGet(callback, getUrl(PRAYER_COMMENT_REQUEST));
+			genericGet(callback, getUrl(PRAYER_COMMENT_REQUEST, guid));
 		}
 	},
 

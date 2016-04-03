@@ -4,7 +4,7 @@ function populateWallFromJSON(json) {
 	wall.innerHTML = "";
 	var html = "";
 	for (var i = 0; i < prayerlist.length; i++) {
-		html += DCC.HTMLFromTemplate(DCC.TEMPLATE.PrayerWall(), prayerlist[i]) + "<br />";
+		html += DCC.PrayerHTMLFromTemplate(DCC.TEMPLATE.PrayerWall(), prayerlist[i]) + "<br />";
 	}
 	wall.innerHTML = html;
 }
