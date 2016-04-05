@@ -94,8 +94,24 @@ const DCC = {
 			request.send(params);
 		},
 
-		"PrayerRequestComment" : function(data) {
-
+		"PrayerRequestComment" : function(callback, guid, name, timestamp, message) {
+			var request = new XMLHttpRequest();
+			var params = JSON.stringify({
+				"PrayerRequestId" : guid,
+				"Name" : name,
+				"TimeStamp" : timestamp,
+				"Comment" : message
+			});
+			request.open("POST", getUrl(PRAYER_COMMENT_REQUEST));
+			request.setRequestHeader("Host", HOST);
+			request.setRequestHeader("Content-type", "application/json");
+			request.setRequestHeader("Content-length", params.length);
+			request.onreadystatechange = function() {
+				if (request.readyState == 4) {
+					callback();
+				}
+			};
+			request.send(params);
 		}
 	}
 
@@ -110,3 +126,18 @@ function getUrl(preUrl, guid) {
 	}
 }
 
+function getParameterByName(name, url) {
+	if (!url) {
+		url = window.location.href;
+	}
+	name = name.replace(/[\[\]]/g, "\\$&");
+	var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
+	    results = regex.exec(url);
+	if (!results) {
+		return null;
+	}
+	if (!results[2]) {
+		return '';
+	}
+	return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
