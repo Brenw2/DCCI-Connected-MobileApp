@@ -4195,8 +4195,8 @@ s #banner button:active,
 }
 
 .forgroundDarkness {
-    filter: brightness(80%);
-    -webkit-filter: brightness(80%);
+    filter: brightness(40%);
+    -webkit-filter: brightness(40%);
 }
 
 .antifilter {
