@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-    <widget id="com.app.DCCIConnected." version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <widget id="com.app.DCCIConnected." version="5.4.1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
         <name>DCCI Connected</name>
         <description>
             Destiny Christian Center International's Community application
@@ -8,7 +8,6 @@
             TKB Team
         </author>
         <content src="index.html" />
-        <preference name="phonegap-version" value="5.2.0" />
         <preference name="stay-in-webview" value="true" />
         <preference name="permissions" value="none" />
         <preference name="orientation" value="default" />
