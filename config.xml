@@ -65,10 +65,10 @@
         <gap:splash gap:platform="android" gap:qualifier="port-xhdpi" src="www/res/screen/android/screen-xhdpi-portrait.png" />
         <gap:splash gap:platform="blackberry" src="www/res/screen/blackberry/screen-225.png" />
         <gap:splash gap:platform="ios" height="480" src="www/res/screen/ios/IPhone-Splash(480x320).png" width="320" />
-        <gap:splash gap:platform="ios" height="960" src="www/res/screen/ios/IPhone-Splash(640x980).png" width="640" />
-        <gap:splash gap:platform="ios" height="1136" src="www/res/screen/ios/screen-iphone-portrait-568h-2x.png" width="640" />
-        <gap:splash gap:platform="ios" height="1024" src="www/res/screen/ios/screen-ipad-portrait.png" width="768" />
-        <gap:splash gap:platform="ios" height="768" src="www/res/screen/ios/screen-ipad-landscape.png" width="1024" />
+        <gap:splash gap:platform="ios" height="960" src="www/res/screen/ios/IPhone-Splash(640x960).png" width="640" />
+        <gap:splash gap:platform="ios" height="1136" src="www/res/screen/ios/IPhone-Splash(640x1136).png" width="640" />
+        <gap:splash gap:platform="ios" height="1024" src="www/res/screen/ios/IOS-Splash(1024x768).png" width="768" />
+        <gap:splash gap:platform="ios" height="768" src="www/res/screen/ios/IOS-Splash(768x1024).png" width="1024" />
         <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
         <access origin="*" />
         <plugin name="cordova-plugin-whitelist" version="1" />
