@@ -8,7 +8,7 @@
             TKB Team
         </author>
         <content src="index.html" />
-        <preference name="phonegap-version" value="5.4.1" />
+        <preference name="phonegap-version" value="5.2.0" />
         <preference name="stay-in-webview" value="true" />
         <preference name="permissions" value="none" />
         <preference name="orientation" value="default" />
