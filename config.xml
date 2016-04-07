@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-    <widget id="com.app.DCCIConnected" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <widget id="com.app.DCCIConnected.*" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
         <name>DCCI Connected</name>
         <description>
             Destiny Christian Center International's Community application
@@ -72,16 +72,16 @@
         <gap:splash gap:platform="winphone" src="www/res/screen/windows-phone/screen-portrait.jpg" />
         <access origin="*" />
         <plugin name="cordova-plugin-whitelist" version="1" />
-        <access origin="https://www.facebook.com"/>
-        <access origin="https://www.givelify.com/givenow/?token=eyJvcmdfaWQiOiJORFF6TkF-fiIsImJhZGdlX2ltYWdlIjoiYjMucG5nIn0~"/>
-        <access origin="https://www.twitter.com"/>
-        <access origin="http://www.dccmuncie.org/about-us/"/>
-        <access origin="http://destinylive.us/messagearchive.aspx"/>
-        <access origin="http://www.dccmuncie.org/im-new/"/>
-        <access origin="https://www.facebook.com/destinylive/"/>
-        <access origin="https://twitter.com/DCCMUNCIE"/>
-        <access origin="http://www.dccmuncie.org"/>
-        <access origin="http://destinylive.us/livbroadcast_mobile.aspx"/>
+        <access origin="https://www.facebook.com" />
+        <access origin="https://www.givelify.com/givenow/?token=eyJvcmdfaWQiOiJORFF6TkF-fiIsImJhZGdlX2ltYWdlIjoiYjMucG5nIn0~" />
+        <access origin="https://www.twitter.com" />
+        <access origin="http://www.dccmuncie.org/about-us/" />
+        <access origin="http://destinylive.us/messagearchive.aspx" />
+        <access origin="http://www.dccmuncie.org/im-new/" />
+        <access origin="https://www.facebook.com/destinylive/" />
+        <access origin="https://twitter.com/DCCMUNCIE" />
+        <access origin="http://www.dccmuncie.org" />
+        <access origin="http://destinylive.us/livbroadcast_mobile.aspx" />
         <access origin="https://dccmuncieprayerwallapi.azurewebsites.net/"></access>
         <allow-navigation href="http://*/*" />
         <allow-intent href="http://*/*" />
