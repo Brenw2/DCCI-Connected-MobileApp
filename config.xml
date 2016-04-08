@@ -7,6 +7,9 @@
         <author email="bishopwkeithoneal@gmail.com" href="http://www.dccmuncie.org/">
             TKB Team
         </author>
+        <uses-permission android:name="android.permission.INTERNET" />
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> 
         <content src="index.html" />
         <preference name="stay-in-webview" value="true" />
         <preference name="permissions" value="none" />
@@ -94,9 +97,6 @@
         <allow-intent href="sms:*" />
         <allow-intent href="mailto:*" />
         <allow-intent href="geo:*" />
-        <uses-permission android:name="android.permission.INTERNET" />
-        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-        <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> 
         <platform name="android">
             <allow-intent href="market:*" />
         </platform>
