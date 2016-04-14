@@ -1,22 +1,118 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Givelify Link</title>
 
+<head>
+    <title>Mobile Giving Link</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="assets/css/Menuscss/reset.css">
+    <!-- CSS reset -->
+    <link rel="stylesheet" href="assets/css/Menuscss/style.css">
+    <!-- Resource style -->
+    <script src="js/modernizr.js"></script>
+    <!-- Modernizr -->
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
 
-    
-    document.addEventListener("deviceready", onDeviceReady, false);
-        
-    function onDeviceReady() {
-         var ref = window.open('https://www.givelify.com/givenow/?token=eyJvcmdfaWQiOiJORFF6TkF-fiIsImJhZGdlX2ltYWdlIjoiYjMucG5nIn0~', '_system', 'location=yes');
-         ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
-         ref.addEventListener('onload', function(event) { window.location.replace("index.html") });
-    }
+        document.addEventListener("deviceready", onDeviceReady, false);
 
+        function onDeviceReady() {
+            var ref = window.open('https://www.givelify.com/givenow/?token=eyJvcmdfaWQiOiJORFF6TkF-fiIsImJhZGdlX2ltYWdlIjoiYjMucG5nIn0~', '_system', 'location=yes');
+            ref.addEventListener('loaderror', function (event) {
+                alert('error: ' + event.message);
+            });
+            ref.addEventListener('onload', function (event) {
+                window.location.replace("index.html")
+            });
+        }
     </script>
-  </head>
-  <body>
-  </body>
+</head>
+
+<div class="navigation">
+    <nav class="cd-stretchy-nav">
+        <a class="cd-nav-trigger" href="#0">Menu<span aria-hidden="true"></span></a>
+        <ul>
+            <li>
+                <a href="index.html"><span>Home</span></a>
+            </li>
+            <li>
+                <a href="prayerWallView.html"><span>Prayer Wall</span></a>
+            </li>
+            <li>
+                <a href="achieveStreaming.html"><span>Past Services</span></a>
+            </li>
+            <li>
+                <a href="givelifyLink.html" class="active"><span>Give</span></a>
+            </li>
+            <li>
+                <a href="aboutUs.html"><span>I'm New / About Us</span></a>
+            </li>
+        </ul>
+        <span aria-hidden="true" class="stretchy-nav-bg"></span>
+    </nav>
+</div>
+
+<div class="customBackgroundColor">
+    <!-- Custom Background Color Tag -->
+</div>
+
+<div class="appPage">
+    <div class="customBackgroundColor">
+        <!-- Custom Background Color Tag -->
+    </div>
+
+    <body class="landing">
+        <section id="four" class="wrapper style2 special">
+            <div class="inner">
+                <div id="toplineSpacer">
+                    <!-- Empty -->
+                </div>
+                <header class="major floating">
+                    <h2>Give</h2>
+                </header>
+                <form>
+                    <ul class="actions">
+                        <li>
+                            <a href="givelifyLink.html" class="button big special">reload Give page</a>
+                        </li>
+                        <li>
+                            <a href="index.html" class="button alt">Go home</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </section>
+        <!-- Scripts -->
+        <script src="assets/js/Menujs/jquery-2.1.4.js"></script>
+        <script src="assets/js/Menujs/main.js"></script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/skel.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <div id="bottomlineSpacer">
+            <!-- Empty -->
+        </div>
+    </body>
+    <footer id="footer" class="floating">
+        <ul class="icons">
+            <li>
+                <a href="facebook.html" class="icon fa-facebook"> <span class="label">Facebook</span> </a>
+            </li>
+            <li>
+                <a href="twitterLink.html" class="icon fa-twitter"> <span class="label">Twitter</span> </a>
+            </li>
+        </ul>
+        <ul class="copyright">
+            <li>
+                &copy; 2016 Destiny Christian Center, Muncie. All Rights Reserved.
+            </li>
+            <li>
+                Design: <a href="http://templated.co">TEMPLATED</a>.
+            </li>
+        </ul>
+    </footer>
+</div>
+
 </html>

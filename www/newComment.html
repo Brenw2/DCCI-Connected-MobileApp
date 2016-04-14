@@ -5,112 +5,109 @@ templated.co @templatedco
 Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
+	<head>
+		<title>DCCI - Connected</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="assets/css/Menuscss/reset.css">
+		<link rel="stylesheet" href="assets/css/Menuscss/style.css">
+		<script src="assets/js/DCCWebService.js"></script>
+		<script src="assets/js/NewComment.js"></script>
+	</head>
 
-<head>
-    <title>DCCI - Connected</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="assets/css/Menuscss/reset.css">
-    <link rel="stylesheet" href="assets/css/Menuscss/style.css">
-    <script src="assets/js/DCCWebService.js"></script>
-    <script src="assets/js/NewComment.js"></script>
-</head>
+	<div class="navigation">
+		<nav class="cd-stretchy-nav">
+			<a class="cd-nav-trigger" href="#0">Menu<span aria-hidden="true"></span></a>
+			<ul>
+				<li>
+					<a href="index.html"><span>Home</span></a>
+				</li>
+				<li>
+					<a href="prayerWallView.html" class="active"><span>Prayer Wall</span></a>
+				</li>
+				<li>
+					<a href="achieveStreaming.html"><span>Past Services</span></a>
+				</li>
+				<li>
+					<a href="givelifyLink.html"><span>Give</span></a>
+				</li>
+				<li>
+					<a href="aboutUs.html"><span>I'm New / About Us</span></a>
+				</li>
+			</ul>
+			<span aria-hidden="true" class="stretchy-nav-bg"></span>
+		</nav>
+	</div>
 
-<div class="navigation">
-    <nav class="cd-stretchy-nav">
-        <a class="cd-nav-trigger" href="#0">Menu<span aria-hidden="true"></span></a>
-        <ul>
-            <li>
-                <a href="index.html"><span>Home</span></a>
-            </li>
-            <li>
-                <a href="prayerWallView.html" class="active"><span>Prayer Wall</span></a>
-            </li>
-            <li>
-                <a href="achieveStreaming.html"><span>Past Services</span></a>
-            </li>
-            <li>
-               <a href="givelifyLink.html"><span>Give</span></a>
-            </li>
-            <li>
-                <a href="aboutUs.html"><span>I'm New / About Us</span></a>
-            </li>
-        </ul>
-        <span aria-hidden="true" class="stretchy-nav-bg"></span>
-    </nav>
-</div>
+	<div class="customBackgroundColor">
+		<!-- Custom Background Color Tag -->
+	</div>
 
-<div class="customBackgroundColor">
-    <!-- Custom Background Color Tag -->
-</div>
-
-<div class="appPage">
-    <div class="customBackgroundColor">
-        <!-- Custom Background Color Tag -->
-    </div>
-
-    <body class="landing">
-        <section id="four" class="wrapper style2 special">
-            <div class="inner">
-                <div id="toplineSpacer">
-                    <!-- Empty -->
-                </div>
-                <header class="major floating">
-                    <h2>New Comment</h2>
-                </header>
-                <form>
-                    <div class="container 75%">
-                        <div class="row uniform 50%">
-                            <div class="12u$">
-                                <input id="nameInput" name="name" placeholder="Name (Optional)" type="text" />
-                            </div>
-                            <div class="12u$">
-                                <textarea id="messageTextArea" name="message" placeholder="Message" rows="4" style="resize: none;"></textarea>
-                            </div>
-                        </div>
-                    </div>
-                    <ul class="actions">
-                        <li>
-                            <input type="button" class="special" value="Submit" onclick="postNewComment()" />
-                        </li>
-                        <li>
-                            <a href="prayerWallView.html" class="button alt">Cancel</a>
-                        </li>
-                    </ul>
-                </form>
-            </div>
-        </section>
-        <!-- Scripts -->
-        <script src="assets/js/Menujs/jquery-2.1.4.js"></script>
-        <script src="assets/js/Menujs/main.js"></script>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/skel.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
-        <div id="bottomlineSpacer">
-            <!-- Empty -->
-        </div>
-    </body>
-    <footer id="footer" class="floating">
-        <ul class="icons">
-            <li>
-                <a href="facebook.html" class="icon fa-facebook"> <span class="label">Facebook</span> </a>
-            </li>
-            <li>
-                <a href="twitterLink.html" class="icon fa-twitter"> <span class="label">Twitter</span> </a>
-            </li>
-        </ul>
-        <ul class="copyright">
-            <li>
-                &copy; 2016 Destiny Christian Center, Muncie. All Rights Reserved.
-            </li>
-            <li>
-                Design: <a href="http://templated.co">TEMPLATED</a>.
-            </li>
-        </ul>
-    </footer>
-</div>
-
+	<div class="appPage">
+		<div class="customBackgroundColor">
+			<!-- Custom Background Color Tag -->
+		</div>
+		<body class="landing">
+			<section id="four" class="wrapper style2 special">
+				<div class="inner">
+					<div id="toplineSpacer">
+						<!-- Empty -->
+					</div>
+					<header class="major floating">
+						<h2>New Comment</h2>
+					</header>
+					<form>
+						<div class="container 75%">
+							<div class="row uniform 50%">
+								<div class="12u$">
+									<input id="nameInput" name="name" placeholder="Name (Optional)" type="text" />
+								</div>
+								<div class="12u$">
+									<textarea id="messageTextArea" name="message" placeholder="Message" rows="4" style="resize: none;"></textarea>
+								</div>
+							</div>
+						</div>
+						<ul class="actions">
+							<li>
+								<input type="button" class="special" value="Submit" onclick="postNewComment()"/>
+							</li>
+							<li>
+								<a href="prayerWallView.html" class="button alt">Cancel</a>
+							</li>
+						</ul>
+					</form>
+				</div>
+			</section>
+			<!-- Scripts -->
+			<script src="assets/js/Menujs/jquery-2.1.4.js"></script>
+			<script src="assets/js/Menujs/main.js"></script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+			<div id="bottomlineSpacer">
+				<!-- Empty -->
+			</div>
+		</body>
+		<footer id="footer" class="floating">
+			<ul class="icons">
+				<li>
+					<a href="facebook.html" class="icon fa-facebook"> <span class="label">Facebook</span> </a>
+				</li>
+				<li>
+					<a href="twitterLink.html" class="icon fa-twitter"> <span class="label">Twitter</span> </a>
+				</li>
+			</ul>
+			<ul class="copyright">
+				<li>
+					&copy; 2016 Destiny Christian Center, Muncie. All Rights Reserved.
+				</li>
+				<li>
+					Design: <a href="http://templated.co">TEMPLATED</a>.
+				</li>
+			</ul>
+		</footer>
+	</div>
 </html>
