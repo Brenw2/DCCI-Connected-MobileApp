@@ -13,7 +13,7 @@
             ref.addEventListener('loaderror', function (event) {
                 alert('error: ' + event.message);
             });
-            ref.addEventListener('exit', function (event) {
+            ref.addEventListener('onload', function (event) {
                 window.location.replace("index.html")
             });
         }
