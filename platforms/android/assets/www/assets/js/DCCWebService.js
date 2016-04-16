@@ -14,6 +14,28 @@ function genericGet(callback, url) {
 	request.send();
 }
 
+const DATE_FORMAT = "MM/DD/YYYY @TIME";
+
+function parseTimestamp(timestamp) {
+	var date = new Date(timestamp);
+	return DATE_FORMAT//
+	.replace("MM", (date.getMonth() + 1))//
+	.replace("DD", date.getDate())//
+	.replace("YYYY", date.getFullYear())//
+	.replace("TIME", getTime(date));
+}
+
+function getTime(date) {
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	var ampm = hours >= 12 ? 'pm' : 'am';
+	hours = hours % 12;
+	hours = hours ? hours : 12;
+	minutes = minutes < 10 ? '0' + minutes : minutes;
+	var strTime = hours + ':' + minutes + ' ' + ampm;
+	return strTime;
+}
+
 const DCC = {
 
 	"GUID" : "@guid",
@@ -27,7 +49,7 @@ const DCC = {
 		return template//
 		.replace(DCC.GUID, prayer.Id)//
 		.replace(DCC.PRECANT, prayer.PrayerRequesterName)//
-		.replace(DCC.TIMEAGO, prayer.TimeStamp)//
+		.replace(DCC.TIMEAGO, parseTimestamp(prayer.TimeStamp))//
 		.replace(DCC.PRAYER, prayer.PrayerRequestMessage);
 	},
 
@@ -36,7 +58,7 @@ const DCC = {
 		.replace(DCC.GUID, comment.Id)//
 		.replace(DCC.PRECANT, comment.Name)//
 		.replace(DCC.ALT_GUID, comment.PrayerRequestId)//
-		.replace(DCC.TIMEAGO, comment.TimeStamp)//
+		.replace(DCC.TIMEAGO, parseTimestamp(comment.TimeStamp))//
 		.replace(DCC.COMMENT, comment.Comment);
 	},
 
